@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/excelReading/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/excelReading/static/js/main.9fdf72c4.chunk.js",
+    "main.js.map": "/excelReading/static/js/main.9fdf72c4.chunk.js.map",
+    "runtime-main.js": "/excelReading/static/js/runtime-main.aa004169.js",
+    "runtime-main.js.map": "/excelReading/static/js/runtime-main.aa004169.js.map",
+    "static/js/2.b8032904.chunk.js": "/excelReading/static/js/2.b8032904.chunk.js",
+    "static/js/2.b8032904.chunk.js.map": "/excelReading/static/js/2.b8032904.chunk.js.map",
+    "static/js/3.5d4fe5cb.chunk.js": "/excelReading/static/js/3.5d4fe5cb.chunk.js",
+    "static/js/3.5d4fe5cb.chunk.js.map": "/excelReading/static/js/3.5d4fe5cb.chunk.js.map",
+    "index.html": "/excelReading/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/excelReading/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.b8032904.chunk.js.LICENSE.txt": "/excelReading/static/js/2.b8032904.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aa004169.js",
+    "static/js/2.b8032904.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.9fdf72c4.chunk.js"
+  ]
+}
