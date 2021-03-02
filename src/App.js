@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import * as XLSX from "xlsx";
+class App extends Component {
+  inputRef = React.createRef();
+  fileHandling = event => {
+    let file = event.target.files[0];
+    this.readExcel(file);
+  };
+  readExcel = file => {
+    const promise = new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsArrayBuffer(file);
+      fileReader.onload = e => {
+        const bufferArray = e.target.result;
+        console.log(bufferArray);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        const wb = XLSX.read(bufferArray, { type: "buffer" });
+        const wsname = wb.SheetNames[0];
+        const ws = wb.Sheets[wsname];
+        const data = XLSX.utils.sheet_to_json(ws, { header: 1 });
+        resolve(data);
+      };
+      fileReader.onerror = error => {
+        reject(error);
+      };
+    });
+    promise.then(d => {
+      console.log(d);
+    });
+  };
+  render() {
+    return (
+      <div className="App">
+        <input
+          type="file"
+          accept=".xls,.xlsx"
+          ref={this.inputRef}
+          onChange={event => this.fileHandling(event)}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
